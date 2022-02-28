@@ -14,8 +14,6 @@ import constants.JpaConst;
 import constants.MessageConst;
 import services.ReportService;
 
-import constants.MessageConst;
-
 /**
  * 日報に関する処理を行うActionクラス
  *
@@ -140,4 +138,5 @@ public class ReportAction extends ActionBase {
             }
         }
     }
+
 }
