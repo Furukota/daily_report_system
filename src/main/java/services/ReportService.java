@@ -91,8 +91,6 @@ public class ReportService extends ServiceBase {
             rv.setCreatedAt(ldt);
             rv.setUpdatedAt(ldt);
             createInternal(rv);
-            arrive_time(rv);
-            leave_time(rv);
         }
 
         //バリデーションで発生したエラーを返却（エラーがなければ0件の空リスト）
@@ -143,15 +141,7 @@ public class ReportService extends ServiceBase {
 
     }
 
-    private void arrive_time(ReportView rv) {
 
-
-    }
-
-    private void leave_time(ReportView rv) {
-        // TODO 自動生成されたメソッド・スタブ
-
-    }
 
     /**
      * 日報データを更新する
