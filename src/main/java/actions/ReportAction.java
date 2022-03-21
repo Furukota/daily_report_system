@@ -110,10 +110,11 @@ public class ReportAction extends ActionBase {
                     ev, //ログインしている従業員を、日報作成者として登録する
                     day,
                     getRequestParam(AttributeConst.REP_TITLE),
+                    getRequestParam(AttributeConst.REP_ARRIVE_TIME),
+                    getRequestParam(AttributeConst.REP_LEAVE_TIME),
                     getRequestParam(AttributeConst.REP_CONTENT),
                     null,
                     null);
-
             //日報情報登録
             List<String> errors = service.create(rv);
 

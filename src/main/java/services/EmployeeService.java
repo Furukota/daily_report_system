@@ -254,5 +254,17 @@ public class EmployeeService extends ServiceBase {
         em.getTransaction().commit();
 
     }
+    /**
+     * 従業員データを更新する
+     * @param ev 画面から入力された従業員の登録内容
+     */
+    private void attendance(EmployeeView ev) {
+
+        em.getTransaction().begin();
+        Employee e = findOneInternal(ev.getId());
+        EmployeeConverter.copyViewToModel(e, ev);
+        em.getTransaction().commit();
+
+    }
 
 }

@@ -34,6 +34,10 @@ public enum AttributeConst {
     EMP_NAME("name"),
     EMP_ADMIN_FLG("admin_flag"),
 
+
+
+
+
     //管理者フラグ
     ROLE_ADMIN(1),
     ROLE_GENERAL(0),
@@ -49,6 +53,8 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
+    REP_ARRIVE_TIME("arrive_time"),//出勤
+    REP_LEAVE_TIME("leave_time"),  //退勤
     REP_CONTENT("content");
 
     private final String text;

@@ -22,6 +22,8 @@
                     <th>社員番号</th>
                     <th>氏名</th>
                     <th>操作</th>
+
+
                 </tr>
                 <c:forEach var="employee" items="${employees}" varStatus="status">
                     <tr class="row${status.count % 2}">
@@ -56,6 +58,7 @@
             </c:forEach>
         </div>
         <p><a href="<c:url value='?action=${actEmp}&command=${commNew}' />">新規従業員の登録</a></p>
+
 
     </c:param>
 </c:import>

@@ -126,6 +126,7 @@ public class EmployeeAction extends ActionBase {
             }
 
         }
+
     }
     /**
      * 詳細画面を表示する
@@ -181,7 +182,8 @@ public class EmployeeAction extends ActionBase {
     public void update() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック
-        if (checkToken()) {
+      //CSRF対策 tokenのチェック
+        if (checkAdmin() && checkToken()) { //追記
             //パラメータの値を元に従業員情報のインスタンスを作成する
             EmployeeView ev = new EmployeeView(
                     toNumber(getRequestParam(AttributeConst.EMP_ID)),
@@ -219,6 +221,13 @@ public class EmployeeAction extends ActionBase {
             }
         }
     }
+
+
+    private boolean checkAdmin() {
+        // TODO 自動生成されたメソッド・スタブ
+        return false;
+    }
+
     /**
      * 論理削除を行う
      * @throws ServletException
@@ -240,4 +249,15 @@ public class EmployeeAction extends ActionBase {
         }
     }
 
-}
+
+    /**
+     * 論理削除を行う
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void attendance() throws ServletException, IOException { // 勤怠チェック
+
+
+        }
+    }
+

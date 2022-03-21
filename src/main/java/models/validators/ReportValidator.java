@@ -25,6 +25,25 @@ public class ReportValidator {
             errors.add(titleError);
         }
 
+      //出勤のチェック
+        String arrive_timeError = validateArrive_time(rv.getArrive_time());
+        if (!arrive_timeError.equals("")) {
+            errors.add(arrive_timeError);
+        }
+
+      //退勤のチェック
+        String leave_timeError = validateLeave_time(rv.getLeave_time());
+        if (!leave_timeError.equals("")) {
+            errors.add(leave_timeError);
+        }
+
+      //出退勤のチェック
+        String attendanceError = validateAttendance(rv.getArrive_time(),rv.getLeave_time());
+        if (!attendanceError.equals("")) {
+            errors.add(attendanceError);
+        }
+
+
         //内容のチェック
         String contentError = validateContent(rv.getContent());
         if (!contentError.equals("")) {
@@ -33,6 +52,12 @@ public class ReportValidator {
 
         return errors;
     }
+
+
+
+
+
+
 
     /**
      * タイトルに入力値があるかをチェックし、入力値がなければエラーメッセージを返却
@@ -47,6 +72,54 @@ public class ReportValidator {
         //入力値がある場合は空文字を返却
         return "";
     }
+
+    /**
+     * 出勤に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param title タイトル
+     * @return エラーメッセージ
+     */
+    private static String validateArrive_time(String arrive_time) {
+        if (arrive_time == null || arrive_time.equals("")) {
+            return MessageConst.E_NOTITLE.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
+    /**
+     * 退勤に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param title タイトル
+     * @return エラーメッセージ
+     */
+    private static String validateLeave_time(String leave_time) {
+        if (leave_time == null || leave_time.equals("")) {
+            return MessageConst.E_NOTITLE.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
+    /**
+     * 出退勤に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param title タイトル
+     * @return エラーメッセージ
+     */
+    private static String validateAttendance(String arrive_time,String leave_time) {
+        if (arrive_time.equals(leave_time)) {
+            return MessageConst.E_NOTBOTHATTENDANCE.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
+
+
+
+
+
 
     /**
      * 内容に入力値があるかをチェックし、入力値がなければエラーメッセージを返却

@@ -76,6 +76,19 @@ public class Report {
     private String title;
 
     /**
+     * 出勤
+     */
+    @Column(name = JpaConst.REP_COL_ARRIVE_TIME, length = 255, nullable = true)
+    private String arrive_time;
+
+    /**
+     * 退勤
+     */
+    @Column(name = JpaConst.REP_COL_LEAVE_TIME, length = 255, nullable = true)
+    private String leave_time;
+
+
+    /**
      * 日報の内容
      */
     @Lob
@@ -93,6 +106,8 @@ public class Report {
      */
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
+
+
 
 }
 

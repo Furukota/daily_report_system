@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="constants.AttributeConst" %>
 
+
 <c:if test="${errors != null}">
     <div id="flush_error">
         入力内容にエラーがあります。<br />
@@ -21,9 +22,17 @@
 <c:out value="${sessionScope.login_employee.name}" />
 <br /><br />
 
-<label for="${AttributeConst.REP_TITLE.getValue()}">タイトル</label><br />
-<input type="text" name="${AttributeConst.REP_TITLE.getValue()}" value="${report.title}" />
-<br /><br />
+        <label for="arrive_time">出勤</label>
+        <input type="time" name="${AttributeConst.REP_ARRIVE_TIME.getValue()}" value='${arrive_time}' id= "arrive_time"/>
+    <br /><br />
+
+        <label for="leave_taime">退勤</label>
+        <input type="time" name="${AttributeConst.REP_LEAVE_TIME.getValue()}" value='${leave_time}' id= "leave_taime"/>
+    <br /><br />
+
+        <label for="${AttributeConst.REP_TITLE.getValue()}">タイトル</label><br />
+        <input type="text" name="${AttributeConst.REP_TITLE.getValue()}" value="${report.title}" />
+        <br /><br />
 
 <label for="${AttributeConst.REP_CONTENT.getValue()}">内容</label><br />
 <textarea name="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
@@ -31,3 +40,6 @@
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>
+
+
+
